@@ -32,4 +32,5 @@ public class WorkingDayController {
                 workingDayService.getWorkingDayById(id).orElseThrow(()->new Exception("Working Day not found"))
         );
     }
+
 }

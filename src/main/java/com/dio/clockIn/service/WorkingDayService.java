@@ -25,7 +25,7 @@ public class WorkingDayService {
     }
 
     public void deleteWorkingDay(Long id) throws Exception {
-        workingDayRepository.delete(this.getWorkingDayById(id).orElseThrow(() -> new Exception("Working day Not found")));
+        workingDayRepository.deleteById(id);
     }
 
     public List<WorkingDay> getWorkingDayList(){
@@ -35,4 +35,9 @@ public class WorkingDayService {
     public Optional<WorkingDay> getWorkingDayById(Long idWorkingDay){
         return workingDayRepository.findById(idWorkingDay);
     }
+
+    public WorkingDay updateWorkingDayById(WorkingDay workingDay){
+        return workingDayRepository.save(workingDay);
+    }
+
 }
