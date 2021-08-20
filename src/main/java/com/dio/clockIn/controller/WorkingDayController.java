@@ -21,7 +21,7 @@ public class WorkingDayController {
         return workingDayService.saveWorkingDay(workingDay);
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public List<WorkingDay> getWorkingDayList(){
         return workingDayService.getWorkingDayList();
     }
@@ -31,6 +31,21 @@ public class WorkingDayController {
         return ResponseEntity.ok(
                 workingDayService.getWorkingDayById(id).orElseThrow(()->new Exception("Working Day not found"))
         );
+    }
+
+    @PutMapping
+    public WorkingDay updateWorkingDay(@RequestBody WorkingDay workingDay){
+        return workingDayService.updateWorkingDayById(workingDay);
+    }
+
+    @DeleteMapping("/{idWorkingDay}")
+    public ResponseEntity deleteWorkingDayById(@PathVariable("idWorkingDay") long id) throws Exception {
+        try{
+            workingDayService.deleteWorkingDay(id);
+        } catch(Exception e){
+            System.out.println("Id não encontrado");
+        }
+        return (ResponseEntity<WorkingDay>) ResponseEntity.ok();
     }
 
 }
