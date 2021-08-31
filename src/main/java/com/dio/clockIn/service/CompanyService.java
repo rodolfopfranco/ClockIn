@@ -39,6 +39,4 @@ public class CompanyService {
         return companyRepository.save(company);
     }
 
-
-
 }
