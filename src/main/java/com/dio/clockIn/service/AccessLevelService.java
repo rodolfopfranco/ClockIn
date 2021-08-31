@@ -11,31 +11,31 @@ import java.util.Optional;
 @Service
 public class AccessLevelService {
 
-    AccessLevelRepository companyRepository;
+    AccessLevelRepository accessLevelRepository;
 
     @Autowired
-    public AccessLevelService(AccessLevelRepository companyRepository){
-        this.companyRepository = companyRepository;
+    public AccessLevelService(AccessLevelRepository accessLevelRepository){
+        this.accessLevelRepository = accessLevelRepository;
     }
 
-    public AccessLevel saveAccessLevel(AccessLevel company){
-        return companyRepository.save(company);
+    public AccessLevel saveAccessLevel(AccessLevel accessLevel){
+        return accessLevelRepository.save(accessLevel);
     }
 
     public void deleteAccessLevel(Long id){
-        companyRepository.deleteById(id);
+        accessLevelRepository.deleteById(id);
     }
 
     public List<AccessLevel> listAccessLevel(){
-        return companyRepository.findAll();
+        return accessLevelRepository.findAll();
     }
 
     public Optional<AccessLevel> getAccessLevelById(Long id){
-        return companyRepository.findById(id);
+        return accessLevelRepository.findById(id);
     }
 
-    public AccessLevel updateAccessLevel(AccessLevel company){
-        return companyRepository.save(company);
+    public AccessLevel updateAccessLevel(AccessLevel accessLevel){
+        return accessLevelRepository.save(accessLevel);
     }
 
 
