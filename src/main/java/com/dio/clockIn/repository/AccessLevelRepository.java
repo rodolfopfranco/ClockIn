@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AccesLevelRepository extends JpaRepository<AccessLevel, Long> {
+public interface AccessLevelRepository extends JpaRepository<AccessLevel, Long> {
 }
