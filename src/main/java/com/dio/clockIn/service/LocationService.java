@@ -4,10 +4,12 @@ package com.dio.clockIn.service;
 import com.dio.clockIn.model.Location;
 import com.dio.clockIn.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LocationService {
     LocationRepository locationRepository;
 
